@@ -6,6 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/mainUI/UI Main Menu.unity
+    guid: 1232bff15614ab74b9146fc6a464ed07
+  - enabled: 1
+    path: Assets/Scenes/guanqia/SceneA.unity
+    guid: a6ced972ada2bf34eaba789ccfec5070
+  - enabled: 1
+    path: Assets/Scenes/guanqia/SceneB.unity
+    guid: 50853082c339415488409ce568560435
   m_configObjects: {}
