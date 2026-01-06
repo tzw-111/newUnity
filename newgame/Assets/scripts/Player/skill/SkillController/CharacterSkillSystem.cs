@@ -109,11 +109,11 @@ public class CharacterSkillSystem : MonoBehaviour
         }
 
         // 伤害检测（和之前一致）
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, 5f, LayerMask.GetMask("Enemy"));
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, 5f, LayerMask.GetMask("guaiwu"));
         foreach (var hitCollider in hitColliders)
         {
             FlyingEyeController enemyHealth = hitCollider.GetComponent<FlyingEyeController>();
-            enemyHealth?.TakeDamage(currentSkill.damage,Vector2.zero);
+            enemyHealth?.TakeDamage(currentSkill.damage, Vector2.zero);
         }
     }
 
