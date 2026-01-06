@@ -204,7 +204,7 @@ MonoBehaviour:
   detectCenter: {fileID: 0}
   targetLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 0
@@ -214,7 +214,6 @@ MonoBehaviour:
   attackColliderObject: {fileID: 4910049932366508171}
   hurtForce: 5
   hurtDuration: 0.2
-  hurtCooldown: 0.1
   deathDestroyDelay: 3
   deathEffect: {fileID: 0}
   currentState: 0

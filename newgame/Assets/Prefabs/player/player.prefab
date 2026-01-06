@@ -266,9 +266,6 @@ MonoBehaviour:
   moveSpeed: 9
   drinkKey: 114
   drinkAnimationDuration: 1
-  drinkEffectPrefab: {fileID: 147642, guid: 685c97d007af49549b239b56b6d2000a, type: 3}
-  drinkEffectOffset: {x: 0.5, y: 0.5, z: 0}
-  isEffectFollowPlayer: 1
   attackKey: 323
   attackAnimationDuration: 0.3
   comboTimeoutDuration: 0.5
@@ -314,8 +311,8 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.03193053, y: 0.3479245}
-  m_Size: {x: 0.32366812, y: 0.73012286}
+  m_Offset: {x: 0.031930536, y: 0.008312342}
+  m_Size: {x: 0.32366812, y: 0.7452161}
   m_Direction: 0
 --- !u!114 &8338829001638358254
 MonoBehaviour:
