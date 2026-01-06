@@ -586,6 +586,7 @@ MonoBehaviour:
   transition: {fileID: 9099001247276316103}
   transitionTime: 1
   triggerTag: Player
+  collisionDelayTime: 1
 --- !u!1 &7048716490176233004
 GameObject:
   m_ObjectHideFlags: 0
