@@ -105,7 +105,7 @@ public class CharacterSkillSystem : MonoBehaviour
         if (currentSkill.skillEffectPrefab != null)
         {
             GameObject effect = Instantiate(currentSkill.skillEffectPrefab, spawnPoint.position, spawnPoint.rotation);
-            Destroy(effect, 3f); // 自动销毁
+            Destroy(effect, 0.5f); // 自动销毁
         }
 
         // 伤害检测（和之前一致）

@@ -374,8 +374,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   skills:
-  - skillName: fireball
-    coolDownTime: 1
+  - skillName: light
+    coolDownTime: 0
     castTime: 0
     damage: 1
     skillEffectPrefab: {fileID: 147226, guid: 4d496338295339f4ab150256f9d9f4b7, type: 3}
