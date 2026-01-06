@@ -17,7 +17,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5467550864671223185
 Transform:
   m_ObjectHideFlags: 0
@@ -312,7 +312,7 @@ MonoBehaviour:
   attackRange: 1.5
   attackDamage: 20
   attackCooldown: 1
-  attackColliderObject: {fileID: 0}
+  attackColliderObject: {fileID: 3663646536855443623}
   hurtForce: 5
   hurtDuration: 0.07
   deathDestroyDelay: 0

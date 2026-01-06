@@ -113,6 +113,37 @@ MonoBehaviour:
   attackDamage: 1
   hitVFXPrefab: {fileID: 183892, guid: 77aff4f1c9d07704bafd856e02a46ac9, type: 3}
   vfxDestroyTime: 0.8
+--- !u!1 &2054966305806655452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7524156064057259452}
+  m_Layer: 6
+  m_Name: skill
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7524156064057259452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2054966305806655452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3647705007996208081}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2301503722737075251
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,9 +156,10 @@ GameObject:
   - component: {fileID: 4920004872430125306}
   - component: {fileID: 8230147544211642250}
   - component: {fileID: 7746990535683931906}
-  - component: {fileID: 388407738986464358}
   - component: {fileID: 2559237978991292156}
+  - component: {fileID: 388407738986464358}
   - component: {fileID: 8338829001638358254}
+  - component: {fileID: 7240837744527276412}
   m_Layer: 6
   m_Name: player
   m_TagString: Player
@@ -149,6 +181,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3161400397244614320}
+  - {fileID: 7524156064057259452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4920004872430125306
@@ -251,34 +284,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &388407738986464358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2301503722737075251}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f9ba5c4d1d40c494fab756a6fb2cc880, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 9
-  drinkKey: 114
-  drinkAnimationDuration: 1
-  attackKey: 323
-  attackAnimationDuration: 0.3
-  comboTimeoutDuration: 0.5
-  AttackCollider_1: {fileID: 8078852877883867341}
-  AttackCollider_2: {fileID: 5984402957494808812}
-  AttackCollider_3: {fileID: 1130841004966678542}
-  attackDamage_1: 1
-  attackDamage_2: 2
-  attackDamage_3: 3
-  hitCoolDown: 0.1
-  singleFlashTime: 0.1
-  flashTimes: 3
-  targetAlpha: 0.3
 --- !u!70 &2559237978991292156
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -314,6 +319,34 @@ CapsuleCollider2D:
   m_Offset: {x: 0.031930536, y: 0.008312342}
   m_Size: {x: 0.32366812, y: 0.7452161}
   m_Direction: 0
+--- !u!114 &388407738986464358
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301503722737075251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9ba5c4d1d40c494fab756a6fb2cc880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 9
+  drinkKey: 114
+  drinkAnimationDuration: 1
+  attackKey: 323
+  attackAnimationDuration: 0.3
+  comboTimeoutDuration: 0.5
+  AttackCollider_1: {fileID: 8078852877883867341}
+  AttackCollider_2: {fileID: 5984402957494808812}
+  AttackCollider_3: {fileID: 1130841004966678542}
+  attackDamage_1: 1
+  attackDamage_2: 2
+  attackDamage_3: 3
+  hitCoolDown: 0.1
+  singleFlashTime: 0.1
+  flashTimes: 3
+  targetAlpha: 0.3
 --- !u!114 &8338829001638358254
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +361,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 500
   currentHealth: 500
+--- !u!114 &7240837744527276412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2301503722737075251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70dce3d0190d7124b9cfeae09ed76288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skills:
+  - skillName: fireball
+    coolDownTime: 1
+    castTime: 0
+    damage: 1
+    skillEffectPrefab: {fileID: 147226, guid: 4d496338295339f4ab150256f9d9f4b7, type: 3}
+    effectSpawnObject: {fileID: 0}
+    castSound: {fileID: 0}
+  skillKeys: 6500000032000000
 --- !u!1 &5280069214885582368
 GameObject:
   m_ObjectHideFlags: 0
