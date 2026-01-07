@@ -2,106 +2,70 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LevelLoader : MonoBehaviour
+public class LevelPortal : MonoBehaviour
 {
-    public Animator transition;
-    public float transitionTime = 1f;
-    // 可选：指定只有特定标签的物体碰撞时才触发（比如主角标签是"Player"）
+    [Header("传送配置")]
+    [Tooltip("触发物体标签（玩家）")]
     public string triggerTag = "Player";
-    // 碰撞后延迟切换场景的时间（秒）
-    public float collisionDelayTime = 1f;
 
-    private Coroutine loadLevelCoroutine;
-    // 标记是否已经触发碰撞（防止重复触发）
-    private bool isCollided = false;
+    [Tooltip("目标场景名称")]
+    public string targetScene = "SC Demo";
 
-    // 2D触发碰撞检测（因为你用的是Box Collider 2D且勾选了Is Trigger）
+    [Tooltip("传送延迟时间")]
+    public float delayTime = 1f;
+
+    [Header("过渡动画")]
+    [Tooltip("过渡动画控制器（可选）")]
+    public Animator transitionAnimator;
+    public float transitionDuration = 0.5f;
+
+    private bool isTriggered = false;
+
     private void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($" 碰撞检测！碰到的物体: {other.name}, 标签: {other.tag}");
-        Debug.Log($" 条件检查: triggerTag='{triggerTag}', isCollided={isCollided}, coroutine={loadLevelCoroutine}");
-
-        if (other.CompareTag(triggerTag) && !isCollided && loadLevelCoroutine == null)
+        // 仅当玩家碰撞且未触发过才执行
+        if (other.CompareTag(triggerTag) && !isTriggered)
         {
-            Debug.Log(" 所有条件满足！开始加载场景！");
-            isCollided = true;
-            loadLevelCoroutine = StartCoroutine(DelayLoadNextLevel());
+            isTriggered = true;
+            Debug.Log($"检测到玩家，{delayTime}秒后传送到 {targetScene}");
+            StartCoroutine(TransferCoroutine());
         }
     }
 
-    // 碰撞后延迟加载下一个场景
-    private IEnumerator DelayLoadNextLevel()
+    private IEnumerator TransferCoroutine()
     {
-        // 等待碰撞延迟时间（1秒）
-        yield return new WaitForSeconds(collisionDelayTime);
+        // 等待延迟时间
+        yield return new WaitForSeconds(delayTime);
 
-        // 延迟结束后执行正常的场景加载逻辑
-        int nextLevelIndex = SceneManager.GetActiveScene().buildIndex + 1;
-        if (nextLevelIndex >= SceneManager.sceneCountInBuildSettings)
+        // 播放过渡动画（如果有）
+        if (transitionAnimator != null)
         {
-            Debug.LogWarning("已是最后一个场景！");
-            isCollided = false; // 重置标记
-            loadLevelCoroutine = null;
-            yield break;
+            transitionAnimator.SetTrigger("Start");
+            yield return new WaitForSeconds(transitionDuration);
         }
 
-        // 触发过渡动画
-        transition?.SetTrigger("Start");
-        // 等待过渡动画完成
-        yield return new WaitForSeconds(transitionTime);
-
+        // 加载目标场景
         try
         {
-            SceneManager.LoadScene(nextLevelIndex);
+            SceneManager.LoadScene(targetScene);
+            Debug.Log($"成功加载场景: {targetScene}");
         }
         catch (System.Exception e)
         {
-            Debug.LogError($"加载失败: {e.Message}");
-            // 加载失败时重置标记，允许再次触发
-            isCollided = false;
+            Debug.LogError($"场景加载失败: {e.Message}");
+            Debug.LogError($"请检查场景'{targetScene}'是否已添加到Build Settings");
+            isTriggered = false; // 允许重新触发
         }
-
-        // 重置协程和碰撞标记
-        loadLevelCoroutine = null;
-        isCollided = false;
     }
 
-    // 可选：如果物体离开碰撞区域，取消延迟加载（可选功能）
+    // 防止玩家离开传送门后取消传送（可选功能）
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(triggerTag) && isCollided)
+        if (other.CompareTag(triggerTag) && !isTriggered)
         {
-            // 停止延迟加载协程
-            if (loadLevelCoroutine != null)
-            {
-                StopCoroutine(loadLevelCoroutine);
-                loadLevelCoroutine = null;
-            }
-            isCollided = false; // 重置标记
+            // 如果希望在离开传送区域时取消传送，可在此实现
+            // StopCoroutine(TransferCoroutine());
+            // isTriggered = false;
         }
-    }
-
-    // 保留原有的LoadLevel方法（兼容其他调用）
-    public void LoadLevel(int levelIndex)
-    {
-        if (loadLevelCoroutine != null) StopCoroutine(loadLevelCoroutine);
-        loadLevelCoroutine = StartCoroutine(LoadLevelCoroutine(levelIndex));
-    }
-
-    // 原有的加载协程（备用）
-    private IEnumerator LoadLevelCoroutine(int levelIndex)
-    {
-        transition?.SetTrigger("Start");
-        yield return new WaitForSeconds(transitionTime);
-        try
-        {
-            SceneManager.LoadScene(levelIndex);
-        }
-        catch (System.Exception e)
-        {
-            Debug.LogError($"加载失败: {e.Message}");
-        }
-        loadLevelCoroutine = null;
-        isCollided = false;
     }
 }
