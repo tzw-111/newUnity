@@ -68,6 +68,10 @@ public class PlayerController : MonoBehaviour
 
     // 状态锁定（核心：确保朝向永不丢失）
     private float _lockedHorizontalDir = 1f; // 1:右  -1:左
+    public float FacingDirection
+    {
+        get { return _lockedHorizontalDir; }
+    }
     private bool _isFirstFrame = true;       // 初始化帧标记
 
     // 基础状态标记
