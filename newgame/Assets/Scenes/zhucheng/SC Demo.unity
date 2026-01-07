@@ -12229,6 +12229,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -268.49997
       objectReference: {fileID: 0}
+    - target: {fileID: 3609118084752727484, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: db1792c8fbc404d4586ec0476cffc836, type: 2}
+    - target: {fileID: 3609118084752727484, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3869605277888101074, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: db1792c8fbc404d4586ec0476cffc836, type: 2}
+    - target: {fileID: 3869605277888101074, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4240218711538553740, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -12332,6 +12348,14 @@ PrefabInstance:
     - target: {fileID: 8071964368258131573, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
       propertyPath: sceneName
       value: SceneA
+      objectReference: {fileID: 0}
+    - target: {fileID: 9108403624886772732, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: db1792c8fbc404d4586ec0476cffc836, type: 2}
+    - target: {fileID: 9108403624886772732, guid: 9774b58756e2b80459c56d64b7467c91, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -24192,8 +24216,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u6309 [M] \u4EA4\u4E92"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: bc970b3f3d4d34e49af6bb0d551a627d, type: 2}
-  m_sharedMaterial: {fileID: 5311051770507863380, guid: bc970b3f3d4d34e49af6bb0d551a627d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: db1792c8fbc404d4586ec0476cffc836, type: 2}
+  m_sharedMaterial: {fileID: -2516193130243383379, guid: db1792c8fbc404d4586ec0476cffc836, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
