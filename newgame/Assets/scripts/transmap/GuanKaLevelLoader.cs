@@ -1,11 +1,11 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using System.Collections;
 
 /// <summary>
 /// 关卡加载器 - 挂载在UI按钮上
 /// </summary>
-public class LevelLoader : MonoBehaviour
+public class GuanKaLevelLoader : MonoBehaviour
 {
     [Header("目标场景")]
     [Tooltip("要加载的场景名称")]
