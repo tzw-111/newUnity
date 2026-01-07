@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/mainUI/UI Main Menu.unity
     guid: 1232bff15614ab74b9146fc6a464ed07
   - enabled: 1
+    path: Assets/Scenes/zhucheng/SC Demo.unity
+    guid: 8c13838df8e680749ae1bb30cfe63339
+  - enabled: 1
     path: Assets/Scenes/guanqia/SceneA.unity
     guid: a6ced972ada2bf34eaba789ccfec5070
   - enabled: 1
