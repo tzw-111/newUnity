@@ -379,12 +379,12 @@ MonoBehaviour:
     castTime: 0
     damage: 1
     skillType: 0
-    circleRadius: 5
+    circleRadius: 3
     castDistance: 10
     boxWidth: 1
     boxHeight: 0.5
     castDirection: {x: 1, y: 0}
-    skillEffectPrefab: {fileID: 147226, guid: 4d496338295339f4ab150256f9d9f4b7, type: 3}
+    skillEffectPrefab: {fileID: 119634, guid: 8d2980ba5e59f33419a0275c1ec29e38, type: 3}
     effectSpawnObject: {fileID: 0}
     castSound: {fileID: 0}
   - skillName: fire
@@ -400,7 +400,7 @@ MonoBehaviour:
     skillEffectPrefab: {fileID: 5801131756113789151, guid: f9085d1214a200847950f28f3671bb0c, type: 3}
     effectSpawnObject: {fileID: 0}
     castSound: {fileID: 0}
-  skillKeys: 650000001b010000
+  skillKeys: 6500000071000000
 --- !u!1 &5280069214885582368
 GameObject:
   m_ObjectHideFlags: 0
